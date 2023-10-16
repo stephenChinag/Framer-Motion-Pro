@@ -1,17 +1,18 @@
-import { createContext, useState } from 'react';
+import { createContext, useState } from "react";
 
+// Create Contex
 export const ChallengesContext = createContext({
   challenges: [],
   addChallenge: () => {},
   updateChallengeStatus: () => {},
 });
 
-export default function ChallengesContextProvider({ children }) {
+const ChallengesContextProvider = ({ children }) => {
   const [challenges, setChallenges] = useState([]);
 
   function addChallenge(challenge) {
     setChallenges((prevChallenges) => [
-      { ...challenge, id: Math.random().toString(), status: 'active' },
+      { ...challenge, id: Math.random().toString(), status: "active" },
       ...prevChallenges,
     ]);
   }
@@ -45,4 +46,5 @@ export default function ChallengesContextProvider({ children }) {
       {children}
     </ChallengesContext.Provider>
   );
-}
+};
+export default ChallengesContextProvider;

@@ -1,10 +1,10 @@
-import Badge from './Badge.jsx';
+import Badge from "./Badge.jsx";
 
 function Tab({ isSelected, onSelect, badgeCaption, children }) {
   return (
     <li>
       <button
-        className={isSelected ? 'selected' : undefined}
+        className={isSelected ? "selected" : undefined}
         onClick={onSelect}
       >
         {children}
@@ -25,22 +25,22 @@ export default function ChallengeTabs({
     <>
       <menu id="tabs">
         <Tab
-          isSelected={selectedType === 'active'}
-          onSelect={() => onSelectType('active')}
+          isSelected={selectedType === "active"}
+          onSelect={() => onSelectType("active")}
           badgeCaption={challenges.active.length}
         >
           Active
         </Tab>
         <Tab
-          isSelected={selectedType === 'completed'}
-          onSelect={() => onSelectType('completed')}
+          isSelected={selectedType === "completed"}
+          onSelect={() => onSelectType("completed")}
           badgeCaption={challenges.completed.length}
         >
           Completed
         </Tab>
         <Tab
-          isSelected={selectedType === 'failed'}
-          onSelect={() => onSelectType('failed')}
+          isSelected={selectedType === "failed"}
+          onSelect={() => onSelectType("failed")}
           badgeCaption={challenges.failed.length}
         >
           Failed
